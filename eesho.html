@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Eesho | MOVIES</title>
+  <link rel="shortcut icon" href="img/favicon.png">
+  <!-- CSS only -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <video src="video/the_boys.mp4" autoplay id="video"></video>
+    <nav>
+      <div class="logo_ul">
+          <img src="img/logo.png" alt="">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#" id="series">Series</a>
+            </li>
+            <li>
+              <a href="#" id="movies">Movies</a>
+            </li>
+            <li>
+              <a href="#">Kids</a>
+            </li>
+          </ul>
+      </div>
+      <div class="search_bar">
+        <input type="text" placeholder="Search" id="search_input">
+        <img src="img/myimg.jpg" alt="">
+        <div class="search">
+            <!-- <a href="#" class="card">
+              <img src="img/the boys.jpg" alt="">
+              <div class="cont">
+                <h3>The Boys</h3>
+                <p>Action, 2021, <span>IMDB</span><i class="fa-solid fa-star"></i> 9.6</p>
+              </div>
+            </a> -->
+        </div>
+      </div>
+    </nav>
+    <div class="content">
+      <h1 id="title">Eesho</h1>
+      <p>Eesho is an Indian Malayalam-language thriller film directed by Nadirshah featuring Jayasurya and Namitha Pramod in the lead roles. The film written by Suneesh Varanad is produced by Arun Narayan.</p>
+      <div class="details">
+        <h6>A Netflix Original Series</h6>
+        <h5 id="gen">Thriller</h5>
+        <h4 id="date">2021</h4>
+        <h3 id="rate"><span>IMDB</span><i class="fa-solid fa-star"></i> 9.6</h3>
+      </div>
+      <div class="btns">
+        <a href="#" id="play">Watch<i class="fa-solid fa-play"></i></a>
+        <a href="#" download="The Boys 480ph" id="low_q">480ph</a>
+        <a href="#" download="The Boys 720ph" id="medium_q">720ph</a>
+        <a href="#" download="The Boys 1080ph" id="high_q">1080ph</a>
+      </div>
+    </div>
+    <section>
+      <h4>Popular</h4>
+      <i class="fa-solid fa-chevron-left scrollleft"></i>
+      <i class="fa-solid fa-chevron-right scrollright"></i>
+      <div class="cards">
+        <!-- <a href="#" class="card">
+          <img src="img/the boys.jpg" class="poster" alt="">
+          <div class="rest_card">
+            <img src="img/the boys1.jpg" alt="">
+            <div class="cont">
+              <h4>The Boys</h4>
+              <div class="sub">
+                <p>Action, 2022</p>
+                <h3><span>IMDB</span><i class="fa-solid fa-star"></i> 9.6</h3>
+              </div>
+            </div>
+          </div>
+        </a> -->
+      </div>
+    </section>
+  </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/af25a275f0.js" crossorigin="anonymous"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script>
+    fetch(json_url).then(function(response){
+      return response.json();
+    }).then(function(data){
+      let movies_array=data.filter(function(ele){
+        return ele.name=== "Eesho";
+      });
+      $("#title").text(movies_array[0].name);
+      $("#video").attr('src',movies_array[0].trailer);
+      $("#low_q").attr('href',movies_array[0].low);
+      $("#medium_q").attr('href',movies_array[0].medium);
+      $("#high_q").attr('href',movies_array[0].high);
+      $("#gen").text(movies_array[0].genre);
+      $("#date").text(movies_array[0].date);
+      $("#rate").html('<span>IMDB</span><i class="fa-solid fa-star"></i>' + movies_array[0].imdb);
+    })
+  </script>
+</body>
+
+</html>

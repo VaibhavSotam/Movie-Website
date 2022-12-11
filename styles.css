@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(23 22 22);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  position: relative;
+  width: 80%;
+  height: 90%;
+  /* border: 1px solid white; */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -8px black;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/money heist1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, transparent, black);
+  z-index: -1;
+}
+
+header video {
+  position: absolute;
+  width: 124%;
+  height: 165%;
+  top: -35%;
+  left: -65px;
+  z-index: -1;
+}
+
+header nav {
+  width: 100%;
+  height: 10%;
+  /* border: 0.5px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.logo_ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo_ul img {
+  width: 90px
+}
+
+.logo_ul ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.logo_ul ul li {
+  padding: 3px 15px;
+}
+
+.logo_ul ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: .3s linear;
+}
+
+.logo_ul ul li a:hover {
+  color: rgb(255, 255, 255, 0.6)
+    /* 0.8 is the opacity*/
+}
+
+header nav .search_bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .search_bar input {
+  padding: 2px 7px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: rgb(255, 255, 255, 0.3);
+  color: white;
+  margin-right: 20px;
+  height: 20px;
+}
+
+header nav .search_bar input::placeholder {
+  color: white;
+}
+
+header nav .search_bar img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  /* margin-right: 120px */
+}
+
+header nav .search_bar .search {
+  position: absolute;
+  width: 280px;
+  height: 230px;
+  /* border: 1px solid white; */
+  right: 70px;
+  top: 40px;
+  z-index: 9999;
+  overflow: auto;
+  left: -50px;
+  visibility: hidden;
+}
+
+header nav .search_bar .search::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+header nav .search_bar .search::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+header nav .search_bar .search:hover::-webkit-scrollbar {
+  visibility: visible;
+}
+
+header nav .search_bar .search:hover::-webkit-scrollbar {
+  visibility: visible;
+}
+
+header nav .search_bar .search .card {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 3px 0;
+  text-decoration: none;
+  /* display: none; */
+}
+
+header nav .search_bar .search .card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.1);
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+header nav .search_bar .search .card img {
+  width: 28px;
+  border-radius: 5px;
+  height: 90%;
+  margin-left: 8px;
+  position: relative;
+}
+
+header nav .search_bar .search .card .cont {
+  margin-left: 10px;
+  color: white;
+}
+
+header nav .search_bar .search .card .cont h3 {
+  font-size: 15px;
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 230px
+}
+
+header nav .search_bar .search .card .cont p {
+  font-size: 10px;
+  color: rgb(255, 255, 255, 0.8);
+}
+
+header nav .search_bar .search .card .cont span {
+  background-color: yellow;
+  color: black;
+  padding: 0 3px;
+  margin: 0 5px 0 10px;
+  font-weight: 500
+}
+
+header .content {
+  position: relative;
+  color: white;
+  margin-top: 50px;
+  padding-left: 50px;
+}
+
+header .content h1 {
+  font-size: 50px;
+}
+
+header .content p {
+  font-size: 11px;
+  width: 350px;
+  word-break: break-all;
+}
+
+header .content .details {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+header .content .details h6 {
+  color: rgb(255, 255, 255, 0.8);
+  font-size: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+header .content .details h5 {
+  color: rgb(142, 230, 48);
+  font-size: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+header .content .details h4 {
+  color: white;
+  font-size: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+header .content .details h3 {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+header .content .details h3 span {
+  background-color: yellow;
+  color: black;
+  padding: 0 3px;
+  margin: 0 5px 0 5px;
+  font-weight: 500
+}
+
+header .content .details h3 i {
+  margin-right: 5px;
+}
+
+header .content .btns {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .content .btns a {
+  padding: 8px 8px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00bdff, #0079ff);
+  border-radius: 5px;
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  animation: button 1s linear infinite;
+}
+
+@keyframes button {
+  0% {
+    background: linear-gradient(0deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  12% {
+    background: linear-gradient(45deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  24% {
+    background: linear-gradient(90deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  37% {
+    background: linear-gradient(135deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  50% {
+    background: linear-gradient(190deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  62% {
+    background: linear-gradient(250deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  79% {
+    background: linear-gradient(310deg, #00bdff, #0079ff);
+  }
+
+  ;
+
+  100% {
+    background: linear-gradient(360deg, #00bdff, #0079ff);
+  }
+
+  ;
+}
+
+header section {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 0 50px;
+  bottom: 20px;
+  color: white;
+}
+
+header section .cards {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  /* border: 1px solid white; */
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+header section .cards::-webkit-scrollbar {
+  display: none;
+}
+
+header section .cards .card {
+  position: relative;
+  min-width: 130px;
+  height: 180px;
+  /* border: 1px solid white; */
+  background: black;
+  margin-right: 10px;
+  border-radius: 8px;
+  transition: 0.3s linear;
+}
+
+header section .cards .card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  border-radius: 8px;
+}
+
+header section .cards .card .poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: relative;
+}
+
+header section .cards .card:hover {
+  min-width: 300px;
+  overflow: hidden;
+}
+
+header section .cards .card .rest_card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  opacity: 0;
+  transition: 1s linear;
+}
+
+header section .cards .card .rest_card img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+header section .cards .card .rest_card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, transparent, black);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+header section .cards .card .rest_card .cont {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+  color: white;
+  padding: 0 20px;
+}
+
+header section .cards .card .rest_card .cont .sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header section .cards .card .rest_card .cont .sub p {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+header section .cards .card .rest_card .cont .sub h3 {
+  font-size: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+header section .cards .card .rest_card .cont .sub h3 span {
+  background-color: yellow;
+  color: black;
+  padding: 0 3px;
+  margin: 0 5px 0 10px;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+header section .cards .card .rest_card .cont .sub h3 i {
+  margin-right: 3px;
+}
+
+header section .cards .card:hover .rest_card {
+  opacity: 1;
+}
+
+header section .fa-chevron-left {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255, 0.3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  z-index: 999999;
+  opacity: 0;
+}
+
+header section .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255, 0.3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  z-index: 999999;
+  opacity: 0;
+  left: unset;
+  right: 3%;
+}
+
+header section:hover .fa-chevron-right {
+  opacity: 1;
+}
+
+header section:hover .fa-chevron-left {
+  opacity: 1;
+}
+
+@media screen and (max-width:1250px) {
+  header video {
+    width: 211%;
+    height: 179%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width:871px) {
+  header nav {
+    padding: 0 14px;
+    height: 15%;
+  }
+
+  header nav .logo_ul ul {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+  }
+
+  header nav .logo_ul ul li {
+    padding: 3px 5px;
+  }
+
+  header nav .logo_ul ul li a {
+    font-size: 10px;
+  }
+
+  header .content {
+    padding-left: 14px;
+  }
+
+  header section {
+    padding: 0px 14px;
+  }
+
+  header {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width:776px) {
+  header video {
+    width: 454%;
+    height: 179%;
+    position: absolute;
+  }
+}
